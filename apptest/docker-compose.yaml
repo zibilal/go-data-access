@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mongo-db1:
+    container_name: 'mongo-db1'
+    image: mongo
+    ports:
+    - 28017:27017
+    volumes:
+    - ./docker-inside:/scripts
+    command: mongod -f /scripts/mongodb.conf
+  mongo-db2:
+    container_name: 'mongo-db2'
+    image: mongo
+    ports:
+    - 28018:27017
+    volumes:
+    - ./docker-inside:/scripts
+    command: mongod -f /scripts/mongodb.conf
+  mongo-db3:
+    container_name: 'mongo-db3'
+    image: mongo
+    ports:
+    - 28019:27017
+    volumes:
+    - ./docker-inside:/scripts
+    command: mongod -f /scripts/mongodb.conf
